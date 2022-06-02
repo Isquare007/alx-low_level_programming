@@ -20,6 +20,6 @@ int main(void)
 	printf("Size of a char is: %lu byte(s)\n", sizeof(c));
 	printf("Size of a long int is: %lu byte(s)\n", sizeof(Li));
 	printf("Size of longlong int is: %lu byte(s)\n", sizeof(LLi));
-	printf("Size of a float is: %lu.bytes(s)\n", sizeof(f));
+	printf("Size of a float is: %lu bytes(s)\n", sizeof(f));
 	return (0);
 }
