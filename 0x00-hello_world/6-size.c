@@ -10,9 +10,9 @@
 
 int main(void)
 {
-	int i;
 	char c;
-	long int Li;
+	int i;
+	long Li;
 	long long int LLi;
 	float f;
 
