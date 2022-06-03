@@ -11,14 +11,17 @@ int main(void)
 	int tens;
 	int ones;
 
-	for (tens = 0; tens <= 9; tens++)
+	for (tens = 0; tens <= 98; tens++)
 	{
-		for (ones = tens + 1; ones <= 9; ones++)
+		for (ones = tens + 1; ones <= 99; ones++)
 		{
-			putchar(tens + '0');
-			putchar(ones + '0');
+			putchar((tens / 10) + '0');
+			putchar((tens % 10) + '0');
+			putchar(' ');
+			putchar((ones / 10) + '0');
+			putchar((ones % 10) + '0');
 
-			if (ones < 9)
+			if (tens != 98 && ones != 99)
 			{
 				putchar(',');
 				putchar(' ');
