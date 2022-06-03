@@ -22,10 +22,9 @@ int main(void)
 			putchar((ones % 10) + '0');
 
 			if (tens == 98 && ones == 99)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+				continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
