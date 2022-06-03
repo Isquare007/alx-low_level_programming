@@ -10,10 +10,10 @@ int main(void)
 {
 	int rev;
 
-	for (rev = 'z'; rev => 'a'; c--)
+	for (rev = 'z'; rev >= 'a'; rev--)
 	{
 		putchar(rev);
 	}
 	putchar('\n');
-	return 0;
+	return (0);
 }
