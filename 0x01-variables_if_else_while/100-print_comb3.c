@@ -8,8 +8,8 @@
   */
 int main(void)
 {
-	int ones
-	int tens
+	int ones;
+	int tens;
 
 	for (tens = 0; tens <= 9; tens++)
 {
