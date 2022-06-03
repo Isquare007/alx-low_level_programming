@@ -21,7 +21,7 @@ int main(void)
 			putchar((ones / 10) + '0');
 			putchar((ones % 10) + '0');
 
-			if (tens != 98 && ones != 99)
+			if (tens == 98 && ones == 99)
 			{
 				putchar(',');
 				putchar(' ');
