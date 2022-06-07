@@ -9,12 +9,9 @@ i#include "main.h"
 
 int main(void)
 {
-	int i;
-	char p[] = "\_putchar";
-
-	for (i = 0; i < 9; i++)
+	char p = "_putchar";
 	{
-		_putchar(p[i]);
+		_putchar(p);
 	}
 	_putchar('\n');
 	return (0);
