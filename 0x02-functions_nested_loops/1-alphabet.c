@@ -4,7 +4,7 @@
   *
   * Description: print lower case alphabets
   *
-  * Return: always (0) success
+  * Return: (void)
   */
 
 void print_alphabet(void)
