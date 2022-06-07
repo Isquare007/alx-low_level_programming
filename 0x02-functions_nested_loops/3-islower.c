@@ -4,6 +4,8 @@
   *
   * Description: check for lowercase
   *
+  *@c: the character in ASCII code
+  *
   * Return: (void)
   */
 int _islower(int c)
@@ -14,7 +16,7 @@ int _islower(int c)
 	}
 	else
 	{
-		return(0);
+		return (0);
 	}
 	_putchar('\n');
 }
