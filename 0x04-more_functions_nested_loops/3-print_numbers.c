@@ -5,8 +5,9 @@
   * Return: 0
   */
 void print_numbers(void)
-	int d
 {
+	int d;
+
 	for (d = 48; d <= 57; d++)
 	{
 		_putchar(d + '0');
