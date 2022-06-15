@@ -7,13 +7,13 @@
   */
 char *rot13(char *s)
 {
-	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char b[] = "MNOPQRSTUVWXYZABCDEFGHIJKLmnopqrstuvwxyzabcdefghijkl";
-	int i, j;
+	char a[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[52] = "MNOPQRSTUVWXYZABCDEFGHIJKLmnopqrstuvwxyzabcdefghijkl";
+	int i = 0, j;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i])
 	{
-		for (j = 0; a[j] != '\0'; j++)
+		for (j = 0; j < 52; j++)
 		{
 			if (s[i] == a[j])
 			{
@@ -21,6 +21,7 @@ char *rot13(char *s)
 				break;
 			}
 		}
+		i++;
 	}
 	return (s);
 }
