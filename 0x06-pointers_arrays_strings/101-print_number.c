@@ -2,7 +2,7 @@
 
 /**
   * print_number - prints an integar
-  * @n: number
+  * @n: Enter number
   * Return: (0)
   */
 void print_number(int n)
