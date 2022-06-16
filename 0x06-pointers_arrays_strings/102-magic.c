@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-/**
-  * main - entrry point
-  * Return: (void)
-  */
 int main(void)
 {
 	int n;
