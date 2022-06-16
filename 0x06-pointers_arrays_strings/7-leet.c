@@ -8,12 +8,12 @@
 char *leet(char *n)
 {
 	int i, j = 0;
-	char l[7] = {'A', 'E', 'O', 'T', 'L'};
+	char l[] = {'A', 'E', 'O', 'T', 'L'};
 	char N[] = {'4', '3', '0', '7', '1'};
 
 	while (n[j])
 	{
-		for (i = 0; i <= 5; i++)
+		for (i = 0; i < 5; i++)
 		{
 			if (n[j] == l[i] ||
 				n[j] - 32 == l[i])
