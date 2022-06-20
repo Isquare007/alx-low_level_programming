@@ -4,7 +4,7 @@
   * _strpbrk - searches a string for set of bytes
   * @s: string
   * @accept: string to be accepted
-  * 
+  *
   * Return: first match of byte in accept else NULL
   */
 char *_strpbrk(char *s, char *accept)
@@ -17,5 +17,5 @@ char *_strpbrk(char *s, char *accept)
 			if (s[i] == accept[j])
 				return (s);
 	}
-	return(0);
+	return ('\0');
 }
