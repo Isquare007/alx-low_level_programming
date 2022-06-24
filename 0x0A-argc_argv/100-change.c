@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	if (amt > 10 && amt < 25)
 	{
 		while (amt >= 10)
-			amt -=10, coins++;
+			amt -= 10, coins++;
 	}
 	if (amt > 5 && amt < 10)
 	{
