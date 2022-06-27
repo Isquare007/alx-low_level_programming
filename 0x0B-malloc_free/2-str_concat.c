@@ -27,12 +27,18 @@ char *str_concat(char *s1, char *s2)
 	if (ar == NULL)
 		return (NULL);
 
-	for (k = 0; k < i; k++)
+	k = l = 0;
+	while (s1[k] != '\0')
+	{
 		ar[k] = s1[k];
-	for (l = 0; l < j; l++)
-		ar[k + l] = s2[l];
-
-	ar[k + l] = '\0';
+		k++;
+	}
+	while (s2[l] != '\0')
+	{
+		ar[k] = s2[l];
+		k++, l++;
+	}
+	ar[k] = '\0';
 
 	return (ar);
 }
