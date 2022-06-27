@@ -41,11 +41,9 @@ char **strtow(char *str)
 	words = wordcounter(str);
 	if (words < 1)
 		return (NULL);
-
 	ar = malloc(sizeof(char *) * (words + 1));
 	if (ar == NULL)
 		return (NULL);
-
 	i = 0;
 	while (i < words && *str != '\0')
 	{
@@ -62,7 +60,7 @@ char **strtow(char *str)
 				free(ar);
 				return (NULL);
 			}
-			m = 0; 
+			m = 0;
 			while (m < n)
 			{
 				ar[i][m] = *str;
