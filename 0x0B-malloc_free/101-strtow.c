@@ -20,7 +20,7 @@ int wordcountrec(char *str, int i)
   * @str: pointer to char
   * Return: number of words
   */
-int wordcount(char *str)
+int wordcounter(char *str)
 {
 	if (str[0] != ' ')
 		return (1 + wordcountrec(str, 0));
@@ -69,7 +69,7 @@ char **strtow(char *str)
 				m++, str++;
 			}
 			ar[i][m] = '\0';
-			i++
+			i++;
 		}
 		str++;
 	}
