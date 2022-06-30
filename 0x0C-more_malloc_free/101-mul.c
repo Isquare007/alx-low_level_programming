@@ -1,12 +1,14 @@
 #include "main.h"
+#include <stdlib.h>
 
 int str_len(char *str);
 char *create_xarray(int size);
 char *iterate_zero(char *str);
 void get_prod(char *prod, char *mult, int digit, int zero);
 void add_nums(char *final_prod, char *next_prod, int next_len);
+
 /**
-  * strlen - finds string lenght
+  * str_len - finds string lenght
   * @str: string
   * Return: lenght
   */
@@ -193,7 +195,6 @@ int main(int argc, char *argv[])
 		add_nums(final_prod, next_prod, size - 1);
 	}
 
-
 	for (i = 0; final_prod[i]; i++)
 	{
 		if (final_prod[i] != 'x')
@@ -202,9 +203,7 @@ int main(int argc, char *argv[])
 	putchar('\n');
 
 	free(next_prod);
-
 	free(final_prod);
 
 	return (0);
 }
-
