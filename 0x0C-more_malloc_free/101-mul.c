@@ -1,9 +1,24 @@
 #include "main.h"
 
+int str_len(char *str);
 char *create_xarray(int size);
 char *iterate_zero(char *str);
 void get_prod(char *prod, char *mult, int digit, int zero);
 void add_nums(char *final_prod, char *next_prod, int next_len);
+/**
+  * strlen - finds string lenght
+  * @str: string
+  * Return: lenght
+  */
+int str_len(char *str)
+{
+	int len = 0;
+
+	while (*str++)
+		len++;
+
+	return (len);
+}
 
 /**
  *create_xarray - creates an array and initialize with x
@@ -68,7 +83,7 @@ void get_prod(char *prod, char *mult, int digit, int zero)
 {
 	int mult_len, num, tens = 0;
 
-	mult_len = strlen(mult) - 1;
+	mult_len = str_len(mult) - 1;
 	mult += mult_len;
 
 	while (*prod)
@@ -92,7 +107,7 @@ void get_prod(char *prod, char *mult, int digit, int zero)
 		num = (*mult - '0') * digit;
 		num += tens;
 		*prod = (num % 10) + '0';
-		tens = / 10;
+		tens = num / 10;
 	}
 	if (tens)
 		*prod = (tens % 10) + '0';
@@ -124,6 +139,18 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 		next_prod--;
 		next_len--;
 	}
+
+	for (; next_len >= 0 && *next_prod != 'x'; next_len--)
+	{
+		num = (*next_prod - '0');
+		num += tens;
+		*final_prod = (num % 10) + '0';
+		tens = num / 10;
+
+		final_prod--;
+		next_prod--;
+	}
+
 	if (tens)
 		*final_prod = (tens % 10) + '0';
 }
@@ -148,33 +175,29 @@ int main(int argc, char *argv[])
 	if (*(argv[1]) == '0')
 		argv[1] = iterate_zero(argv[1]);
 	if (*(argv[2]) == '0')
-		argv[2] = iterate_zero(argv[1]);
+		argv[2] = iterate_zero(argv[2]);
 	if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	size = strlen(argv[1]) + strlen(argv[2]);
+	size = str_len(argv[1]) + str_len(argv[2]);
 	final_prod = create_xarray(size + 1);
 	next_prod = create_xarray(size + 1);
 
-	for (i = strlen(argv[2]) - 1; i >= 0; i--)
+	for (i = str_len(argv[2]) - 1; i >= 0; i--)
 	{
 		digit = get_digit(*(argv[2] + i));
 		get_prod(next_prod, argv[1], digit, zero++);
 		add_nums(final_prod, next_prod, size - 1);
 	}
-	for (index = strlen(argv[2]) - 1; index >= 0; index--)
+
+
+	for (i = 0; final_prod[i]; i++)
 	{
-		digit = get_digit(*(argv[2] + index));
-		get_prod(next_prod, argv[1], digit, zeroes++);
-		add_nums(final_prod, next_prod, size - 1);
-	}
-	for (index = 0; final_prod[index]; index++)
-	{
-		if (final_prod[index] != 'x')
-			putchar(final_prod[index]);
+		if (final_prod[i] != 'x')
+			putchar(final_prod[i]);
 	}
 	putchar('\n');
 
