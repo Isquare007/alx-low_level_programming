@@ -1,4 +1,4 @@
-#include "functiom_pointers.h"
+#include "function_pointers.h"
 
 /**
   * int_index - search for an integar
@@ -11,7 +11,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
-	if (size < 1 || array == NULL || smp == NULL)
+	if (size < 1 || array == NULL || cmp == NULL)
 		return (-1);
 
 	for (i = 0; i < size; i++)
