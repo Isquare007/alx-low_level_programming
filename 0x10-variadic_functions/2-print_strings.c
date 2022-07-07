@@ -2,7 +2,7 @@
 
 /**
   * print_strings - prints a string
-  * @seperator: string to be printed between the strings
+  * @separator: string to be printed between the strings
   * @n: numbers of strings passed
   * Return: void
   */

@@ -2,7 +2,7 @@
 
 /**
   * print_numbers - print numbers
-  * @seperator: string to be printed between numbers
+  * @separator: string to be printed between numbers
   * @n: number: number of integars
   * Return: NULL if seperator is null
   */
@@ -15,7 +15,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(num, unsigned int));
-		if ( i < (n - 1) && seperator != NULL)
+		if (i < (n - 1) && seperator != NULL)
 			printf("%s", seperator);
 	}
 	va_end(num);
