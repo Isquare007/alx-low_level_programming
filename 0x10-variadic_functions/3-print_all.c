@@ -53,7 +53,7 @@ void print_string(va_list arg)
 void print_float(va_list arg)
 {
 	float num;
-	
+
 	num = va_arg(arg, double);
 	printf("%f", num);
 }
@@ -76,7 +76,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format && (*(format + i )))
+	while (format && (*(format + i)))
 	{
 		j = 0;
 		while (j < 4 && (*(format + i) != *(funcs[j].symbol)))
