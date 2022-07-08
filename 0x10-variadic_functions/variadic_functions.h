@@ -10,6 +10,11 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
+/**
+  * struct printer - structure operaator
+  * @symbol: symbol
+  * @print: associated function
+  */
 typedef struct printer
 {
 	char *symbol;
