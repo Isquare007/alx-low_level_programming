@@ -3,8 +3,8 @@
 
 /**
   * add_nodeint_end - add a new node to the end of the list
-  * @hwad: singly linked list
-  * #n: added integar
+  * @head: singly linked list
+  * @n: added integar
   * Return: address of new element or NULL
   */
 listint_t *add_nodeint_end(listint_t **head, const int n)
@@ -16,7 +16,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (NULL);
 	new->n = n;
 	new->next = NULL;
-	
 	if (*head == NULL)
 		*head = new;
 	else
