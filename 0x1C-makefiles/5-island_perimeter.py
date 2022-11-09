@@ -4,7 +4,9 @@
 Technical interview
 """
 
+
 def island_perimeter(grid):
+
     """
     grid is a list of list of integers:
     0 represents a water zone
