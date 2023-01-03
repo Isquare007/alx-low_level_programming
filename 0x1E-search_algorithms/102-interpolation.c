@@ -1,7 +1,9 @@
 #include "search_algos.h"
-  
+
 /**
- * binary_search - searches an array using binary search algo
+ * interpolation_search - searches an array using
+ * interpolation search and binary seearch algorithm
+ *
  * @array: array to be searched for a value
  * @size: size of the array
  * @value: value that is been searched for
@@ -10,13 +12,13 @@
 
 int interpolation_search(int *array, size_t size, int value)
 {
-        size_t pos, l, h;
+	size_t pos, l, h;
 
-        if (array == NULL || size == 0)
-                return (-1);
+	if (array == NULL || size == 0)
+		return (-1);
 
-        l = 0;
-        h = size - 1;
+	l = 0;
+	h = size - 1;
 
 	while (l <= h)
 	{
