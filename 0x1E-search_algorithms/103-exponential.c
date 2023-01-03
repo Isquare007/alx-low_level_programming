@@ -43,11 +43,11 @@ int exponential_search(int *array, size_t size, int value)
 		mid = l + (h - l) / 2;
 		if (array[mid] < value)
 		{
-			low = mid + 1;
+			l = mid + 1;
 		}
 		else
 		{
-			high = mid - 1;
+			h = mid - 1;
 		}
 	}
 	return (-1);
