@@ -1,6 +1,41 @@
 #include "search_algos.h"
 
 /**
+  * _binary_search - Searches using binary search.
+  * @array: A pointer to the first element of the array to search.
+  * @left: The starting inde
+  * @right: The ending index
+  * @value: The value to search for.
+  *
+  * Return: NULL, -1, the index where the value is located.
+  */
+int _binary_search(int *array, size_t left, size_t right, int value)
+{
+	size_t i;
+
+	if (array == NULL)
+		return (-1);
+
+	while (right >= left)
+	{
+		printf("Searching in array: ");
+		for (i = left; i < right; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+
+		i = left + (right - left) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			right = i - 1;
+		else
+			left = i + 1;
+	}
+
+	return (-1);
+}
+
+/**
  * exponential_search - searches an array using
  * exponential search and binary search algorithm
  *
@@ -12,43 +47,21 @@
 
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t i, l, h, mid;
+	size_t i = 0, right;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
 
-	if (array[0] == value)
-		return (0);
-
-	i = 1;
-	while (i < size && array[i] <= value)
+	if (array[0] != value)
 	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		i *= 2;
+		for (i = 1; i < size && array[i] <= value; i = i * 2)
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
-	if (i == size)
-		printf("Value found between indexes [%ld] and [%ld]\n", i / 2, (i - 1));
+
+	if (i < size)
+		right = i;
 	else
-		printf("Value found between indexes [%ld] and [%ld]\n", i / 2, (i));
-
-	l = i / 2;
-	h = size - 1;
-
-	while (l <= h)
-	{
-		printf("Searching in array: ");
-		for (i = l; i < h; i++)
-			printf("%d, ", array[i]);
-		printf("%d\n", array[i]);
-		mid = l + (h - l) / 2;
-		if (array[mid] < value)
-		{
-			l = mid + 1;
-		}
-		else
-		{
-			h = mid - 1;
-		}
-	}
-	return (-1);
+		right = size - 1;
+	printf("Value found between indexes [%ld] and [%ld]\n", i / 2, right);
+	return (_binary_search(array, i / 2, right, value));
 }
